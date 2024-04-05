@@ -1,0 +1,13 @@
+// Program to print Fibonacci series in a given range
+
+let Fib_Range (a, b) = 
+	b ls a -> 'wrong range' | 
+		a le 1 ->
+			(Fib_Cal (a, b, 1, 0), print(' '), print(1), print(' '), print(0)) |
+			Fib_Cal (a, b, 1, 0)
+
+where rec Fib_Cal (a, b, x, y) = 
+	(x+y) ls a  -> Fib_Cal (a, b, x + y, x) |
+		(x+y) ls b -> ((Fib_Cal (a, b, x + y, x)), print(' '), print(x+y)) | nil			
+
+in Fib_Range (10, 50)

@@ -1,0 +1,8 @@
+// Program to check whether the given number is positive or negative
+
+let Check_Number N = 
+    N ls 0 -> 'Negative'
+    | N eq 0 -> 'Zero'
+    | 'Positive'
+
+in print(Check_Number (10), Check_Number (-1), Check_Number (0))

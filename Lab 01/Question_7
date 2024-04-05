@@ -1,0 +1,7 @@
+// Program to check if number is odd or even
+
+let Check_Number N = 
+    N - 2 * (N / 2) eq 0 -> 'Even'
+    | 'Odd'
+
+in print(Check_Number (10), Check_Number (5), Check_Number (-1), Check_Number (0))

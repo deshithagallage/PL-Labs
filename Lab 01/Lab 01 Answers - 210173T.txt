@@ -1,0 +1,98 @@
+// Question 01
+// Program to check whether the given number is positive or negative
+
+let Check_Number N = 
+    N ls 0 -> 'Negative'
+    | N eq 0 -> 'Zero'
+    | 'Positive'
+
+in print(Check_Number (10), Check_Number (-1), Check_Number (0))
+
+
+
+// Question 02
+// Program to find greatest of three numbers
+
+let Greatest_of_three (a, b, c) =
+    a gr b & a gr c -> a
+    | b gr c -> b
+    | c
+
+in Print (Greatest_of_three (3, 4, 5))
+
+
+
+// Question 03
+// Program to print Fibonacci series in a given range
+
+let Fib_Range (a, b) = 
+	b ls a -> 'wrong range' | 
+		a le 1 ->
+			(Fib_Cal (a, b, 1, 0), print(' '), print(1), print(' '), print(0)) |
+			Fib_Cal (a, b, 1, 0)
+
+where rec Fib_Cal (a, b, x, y) = 
+	(x+y) ls a  -> Fib_Cal (a, b, x + y, x) |
+		(x+y) ls b -> ((Fib_Cal (a, b, x + y, x)), print(' '), print(x+y)) | nil			
+
+in Fib_Range (10, 50)
+
+
+
+// Question 04
+// Program to find factorial of a given number
+
+let rec Factorial N =
+    N eq 0 -> 1
+    | N * Factorial (N-1)
+
+in Print (Factorial 5)
+
+
+
+// Question 05
+// Program to check if given number is palindrome or not
+
+let pali n = n eq reverse (n, 0) -> 'Palindrome' 
+    | 'Not a Palindrome'
+    
+where rec reverse (n, x) = n gr 0 -> reverse (n/10, (x*10 + (n-(n/10)*10))) 
+    | x
+
+in Print(pali 1001, pali 1234)
+
+
+
+// Question 06
+// Program to display palindrome numbers in a given range
+
+let rec reverse (n, x) = n gr 0 -> reverse (n/10, (x*10 + n - (n/10)*10)) | x
+	within
+		rec pali(a, b) = 
+			b ls a -> '' |
+			reverse (a,0) eq a -> (pali(a+1,b), print(' '), print(a))|
+				pali(a+1,b)						
+
+in pali(1, 100)
+
+
+
+// Question 07
+// Program to check if number is odd or even
+
+let Check_Number N = 
+    N - 2 * (N / 2) eq 0 -> 'Even'
+    | 'Odd'
+
+in print(Check_Number (10), Check_Number (5), Check_Number (-1), Check_Number (0))
+
+
+
+// Question 08
+// Program to find sum of first n numbers
+
+let rec Sum N =
+    N eq 0 -> 0
+    | N + Sum (N-1)
+
+in Print (Sum 0, Sum 10, Sum 20)

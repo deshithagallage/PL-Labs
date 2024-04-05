@@ -1,0 +1,8 @@
+// Program to find greatest of three numbers
+
+let Greatest_of_three (a, b, c) =
+    a gr b & a gr c -> a
+    | b gr c -> b
+    | c
+
+in Print (Greatest_of_three (3, 4, 5))
