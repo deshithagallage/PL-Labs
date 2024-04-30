@@ -668,7 +668,7 @@ tokens = screener.screen()
 # parse input
 print(" after screening ")
 # for token in tokens:
-#     # print(token.type, token.value)
+#     print(token.type, token.value)
 parser = ASTParsser()
 parser.tokens = tokens
 parser.current_token = tokens[0]
